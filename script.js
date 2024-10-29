@@ -1,14 +1,25 @@
-// Función para abrir aplicaciones
 function openApp(appId) {
     document.getElementById(appId).style.display = 'flex';
 }
 
-// Función para cerrar aplicaciones
 function closeApp(appId) {
     document.getElementById(appId).style.display = 'none';
 }
 
-// Función para mover las ventanas
+function toggleStartMenu() {
+    const startMenu = document.getElementById("startMenu");
+    startMenu.style.display = startMenu.style.display === "none" ? "block" : "none";
+}
+
+// Reloj en la barra de tareas
+function updateClock() {
+    const now = new Date();
+    document.getElementById("clock").textContent = now.toLocaleTimeString();
+}
+
+setInterval(updateClock, 1000);
+
+// Funcionalidad de arrastrar para ventanas
 let isDragging = false;
 let offsetX, offsetY;
 
@@ -32,11 +43,3 @@ document.querySelectorAll('.window').forEach(window => {
         isDragging = false;
     });
 });
-
-// Reloj en la barra de tareas
-function updateClock() {
-    const now = new Date();
-    document.getElementById("clock").textContent = now.toLocaleTimeString();
-}
-
-setInterval(updateClock, 1000);
