@@ -7,42 +7,36 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Área de escritorio -->
+    <!-- Escritorio -->
     <div id="desktop">
-        <!-- Iconos y accesos directos -->
         <div class="icon" onclick="openApp('app1')">📁 Documentos</div>
-        <div class="icon" onclick="openApp('app2')">📋 Notas</div>
+        <div class="icon" onclick="openApp('app2')">📝 Bloc de notas</div>
     </div>
 
     <!-- Barra de tareas -->
     <div id="taskbar">
-        <button onclick="openMenu()">Inicio</button>
-        <span id="clock"></span>
+        <div id="startButton" onclick="toggleStartMenu()">⊞</div>
+        <div id="taskIcons"></div>
+        <div id="clock"></div>
     </div>
 
-    <!-- Ventanas de las aplicaciones -->
+    <!-- Menú de Inicio -->
+    <div id="startMenu">
+        <ul>
+            <li onclick="openApp('app1')">📁 Documentos</li>
+            <li onclick="openApp('app2')">📝 Bloc de notas</li>
+        </ul>
+    </div>
+
+    <!-- Ventanas de aplicaciones -->
     <div id="app1" class="window">
-        <div class="title-bar">
-            Documentos
-            <button onclick="closeApp('app1')">X</button>
-        </div>
+        <div class="title-bar">Documentos <button onclick="closeApp('app1')">X</button></div>
         <div class="content">Aquí van tus documentos.</div>
     </div>
 
     <div id="app2" class="window">
-        <div class="title-bar">
-            Notas
-            <button onclick="closeApp('app2')">X</button>
-        </div>
-        <div class="content"><textarea placeholder="Escribe tus notas..."></textarea></div>
-    </div>
-
-    <!-- Pantalla de instalación -->
-    <div id="installationScreen" class="window">
-        <div class="title-bar">Instalación</div>
-        <div class="content">
-            <button onclick="installSystem()">Instalar</button>
-        </div>
+        <div class="title-bar">Bloc de notas <button onclick="closeApp('app2')">X</button></div>
+        <div class="content"><textarea placeholder="Escribe aquí..."></textarea></div>
     </div>
 
     <script src="script.js"></script>
