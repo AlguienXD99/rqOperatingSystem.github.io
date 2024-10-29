@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web OS Simulador</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="desktop">
+        <!-- Iconos y accesos directos -->
+        <div class="icon" onclick="openApp('app1')">📁 Documentos</div>
+        <div class="icon" onclick="openApp('app2')">📋 Notas</div>
+    </div>
+
+    <div id="taskbar">
+        <button onclick="openMenu()">Inicio</button>
+        <span id="clock"></span>
+    </div>
+
+    <div id="app1" class="window">
+        <div class="title-bar">
+            Documentos
+            <button onclick="closeApp('app1')">X</button>
+        </div>
+        <div class="content">Aquí van tus documentos.</div>
+    </div>
+
+    <div id="app2" class="window">
+        <div class="title-bar">
+            Notas
+            <button onclick="closeApp('app2')">X</button>
+        </div>
+        <div class="content"><textarea placeholder="Escribe tus notas..."></textarea></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
